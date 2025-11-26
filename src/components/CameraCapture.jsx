@@ -45,10 +45,14 @@ const CameraCapture = ({ onCapture, onCancel }) => {
   }, []);
 
   // Handle video metadata loaded
-  const handleVideoLoad = () => {
-    console.log('Video metadata loaded');
+  const handleVideoLoad = (e) => {
+    console.log('Video metadata loaded', {
+      videoWidth: e.target.videoWidth,
+      videoHeight: e.target.videoHeight,
+      readyState: e.target.readyState
+    });
     setIsLoading(false);
-    setDebugInfo('Video stream active');
+    setDebugInfo(`Video: ${e.target.videoWidth}x${e.target.videoHeight}`);
   };
 
   // Handle video play
@@ -58,13 +62,38 @@ const CameraCapture = ({ onCapture, onCancel }) => {
     setDebugInfo('Camera streaming');
   };
 
+  // Handle video errors
+  const handleVideoError = (e) => {
+    console.error('Video error:', e);
+    setDebugInfo('Video error occurred');
+  };
+
+  // Handle video stalled
+  const handleVideoStalled = () => {
+    console.warn('Video stalled');
+    setDebugInfo('Video stalled');
+  };
+
   // Fallback: Hide loading after timeout
   useEffect(() => {
     if (isStreaming && isLoading) {
       const timer = setTimeout(() => {
         console.log('Loading timeout - forcing hide');
+        console.log('Video element state:', {
+          hasVideoRef: !!videoRef.current,
+          hasSrcObject: !!videoRef.current?.srcObject,
+          videoWidth: videoRef.current?.videoWidth,
+          videoHeight: videoRef.current?.videoHeight,
+          readyState: videoRef.current?.readyState,
+          paused: videoRef.current?.paused
+        });
         setIsLoading(false);
         setDebugInfo('Camera active (timeout)');
+        
+        // Force play if paused
+        if (videoRef.current?.paused) {
+          videoRef.current.play().catch(err => console.error('Force play error:', err));
+        }
       }, 3000);
       return () => clearTimeout(timer);
     }
@@ -131,6 +160,9 @@ const CameraCapture = ({ onCapture, onCancel }) => {
               muted
               onLoadedMetadata={handleVideoLoad}
               onPlay={handleVideoPlay}
+              onError={handleVideoError}
+              onStalled={handleVideoStalled}
+              onCanPlay={() => console.log('Video can play')}
               className={styles.video}
             />
             {isLoading && (
