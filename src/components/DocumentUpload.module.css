@@ -39,6 +39,8 @@
 .sendingContent {
   text-align: center;
   padding: var(--spacing-xl);
+  width: 100%;
+  max-width: 500px;
 }
 
 .sendingTitle {
