@@ -20,7 +20,7 @@ const SplashScreen = ({ onComplete }) => {
         <div className={styles.logoContainer}>
           {/* Hesabrasyar Logo */}
           <div className={styles.logoPlaceholder}>
-            <img src="/hesabrasyar-pwa/logo.svg" alt="Hesabrasyar Logo" width="120" height="120" />
+            <img src="/hesabrasyar-pwa/logo-512x512.svg" alt="Hesabrasyar Logo" width="120" height="120" />
           </div>
         </div>
         <h1 className={styles.appName}>حسابرسیار</h1>

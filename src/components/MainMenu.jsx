@@ -47,7 +47,7 @@ const MainMenu = () => {
       <div className={styles.header}>
         <div className={styles.logoSection}>
           <div className={styles.logoPlaceholder}>
-            <img src="/hesabrasyar-pwa/logo.svg" alt="Hesabrasyar Logo" width="50" height="50" />
+            <img src="/hesabrasyar-pwa/logo-512x512.svg" alt="Hesabrasyar Logo" width="50" height="50" />
           </div>
           <div>
             <h1 className={styles.appTitle}>حسابرسیار</h1>
