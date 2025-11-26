@@ -1,11 +1,10 @@
-<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-  <rect width="512" height="512" fill="#FFFFFF"/>
-  <!-- Left bar -->
-  <rect x="97" y="140" width="25" height="232" fill="#1007a0"/>
-  <!-- Right bar -->
-  <rect x="403" y="140" width="25" height="232" fill="#1007a0"/>
-  <!-- Top arrow pointing right -->
-  <path d="M212 140 L330 140 L378 188 L330 236 L148 236 L148 188 Z" fill="#1007a0"/>
-  <!-- Bottom arrow pointing left -->
-  <path d="M312 276 L378 324 L312 372 L148 372 L148 324 L212 276 Z" fill="#1007a0"/>
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+	<style>
+		.s0 { fill: #fe582c } 
+	</style>
+	<g id="Layer 1">
+		<path id="&lt;Path&gt;" class="s0" d="m209.95 293.4v-15.22l-22.78 22.81 22.78 22.73v-15.15h106.22v83.46h-129.25l-68.05-68.28v-106.43h182.12v15.36l22.76-22.74-22.76-22.78v15.2h-106.23v-83.46h128.97l68.21 68.26v106.24z"/>
+		<path id="&lt;Path&gt;" class="s0" d="m88.62 118.79v273.24h-30.46v-273.24z"/>
+		<path id="&lt;Path&gt;" class="s0" d="m452.79 118.79v273.24h-30.46v-273.24z"/>
+	</g>
 </svg>
