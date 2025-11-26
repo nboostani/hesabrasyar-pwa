@@ -23,7 +23,7 @@
   height: 150px;
   object-fit: cover;
   border-radius: var(--radius-md);
-  border: 3px solid var(--primary-orange);
+  border: 3px solid var(--primary-color);
   box-shadow: var(--shadow-md);
 }
 
@@ -65,11 +65,11 @@
 }
 
 .projectCard:hover {
-  border-color: var(--primary-orange);
+  border-color: var(--primary-color);
 }
 
 .projectCard.selected {
-  border-color: var(--primary-orange);
+  border-color: var(--primary-color);
   background-color: rgba(239, 85, 48, 0.05);
 }
 
@@ -104,7 +104,7 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background-color: var(--primary-orange);
+  background-color: var(--primary-color);
   color: var(--text-white);
   display: flex;
   align-items: center;

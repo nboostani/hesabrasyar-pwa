@@ -58,13 +58,13 @@ p {
 
 /* Links */
 a {
-  color: var(--primary-orange);
+  color: var(--primary-color);
   text-decoration: none;
   transition: color var(--transition-fast);
 }
 
 a:hover {
-  color: var(--primary-orange-dark);
+  color: var(--primary-dark);
 }
 
 /* Buttons Reset */
@@ -160,7 +160,7 @@ img {
 
 .spinner {
   border: 3px solid var(--border-light);
-  border-top-color: var(--primary-orange);
+  border-top-color: var(--primary-color);
   border-radius: 50%;
   width: 40px;
   height: 40px;

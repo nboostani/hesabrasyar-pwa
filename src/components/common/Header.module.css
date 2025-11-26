@@ -21,7 +21,7 @@
   justify-content: center;
   background: transparent;
   border: none;
-  color: var(--primary-orange);
+  color: var(--primary-color);
   cursor: pointer;
   padding: var(--spacing-sm);
   border-radius: var(--radius-md);

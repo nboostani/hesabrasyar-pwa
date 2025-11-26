@@ -21,10 +21,10 @@ const SplashScreen = ({ onComplete }) => {
           {/* Hesabrasyar Logo */}
           <div className={styles.logoPlaceholder}>
             <svg width="120" height="120" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-              <rect x="97" y="140" width="25" height="232" fill="#EF5530"/>
-              <rect x="403" y="140" width="25" height="232" fill="#EF5530"/>
-              <path d="M212 140 L330 140 L378 188 L330 236 L148 236 L148 188 Z" fill="#EF5530"/>
-              <path d="M312 276 L378 324 L312 372 L148 372 L148 324 L212 276 Z" fill="#EF5530"/>
+              <rect x="97" y="140" width="25" height="232" fill="#1007a0"/>
+              <rect x="403" y="140" width="25" height="232" fill="#1007a0"/>
+              <path d="M212 140 L330 140 L378 188 L330 236 L148 236 L148 188 Z" fill="#1007a0"/>
+              <path d="M312 276 L378 324 L312 372 L148 372 L148 324 L212 276 Z" fill="#1007a0"/>
             </svg>
           </div>
         </div>

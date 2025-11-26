@@ -6,7 +6,7 @@
 }
 
 .header {
-  background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-orange-dark) 100%);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
   color: var(--text-white);
   padding: var(--spacing-xl) var(--spacing-md);
   box-shadow: var(--shadow-md);
@@ -67,7 +67,7 @@
 }
 
 .iconWrapper {
-  color: var(--primary-orange);
+  color: var(--primary-color);
   display: flex;
   align-items: center;
   justify-content: center;

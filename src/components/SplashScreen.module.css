@@ -37,7 +37,7 @@
 .appName {
   font-size: 36px;
   font-weight: 700;
-  color: var(--primary-orange);
+  color: var(--primary-color);
   margin: 0;
   animation: slideUp 0.6s ease;
 }

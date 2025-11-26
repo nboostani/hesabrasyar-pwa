@@ -1,9 +1,12 @@
 /* CSS Variables - Color Palette from Logo */
 :root {
   /* Primary Colors */
-  --primary-orange: #EF5530;
-  --primary-orange-light: #FF6B47;
-  --primary-orange-dark: #D64420;
+  --primary-color: #1007a0;
+  --primary-light: #2018c0;
+  --primary-dark: #080580;
+  --secondary-orange: #EF5530;
+  --secondary-orange-light: #FF6B47;
+  --secondary-orange-dark: #D64420;
   --primary-dark: #2D2D2D;
   
   /* Background Colors */

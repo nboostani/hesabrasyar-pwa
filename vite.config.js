@@ -20,7 +20,7 @@ export default defineConfig({
         scope: '/hesabrasyar-pwa/',
         display: 'standalone',
         orientation: 'portrait',
-        theme_color: '#EF5530',
+        theme_color: '#1007a0',
         background_color: '#FFFFFF',
         icons: [
           {
