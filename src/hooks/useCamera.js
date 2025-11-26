@@ -37,14 +37,30 @@ export const useCamera = () => {
       setFacingMode(mode);
       
       if (videoRef.current) {
-        videoRef.current.srcObject = mediaStream;
-        // Wait for video to be ready and play it
-        try {
-          await videoRef.current.play();
-        } catch (playError) {
-          console.log('Video play error (may be auto-play policy):', playError);
-          // Video will auto-play with autoPlay attribute
-        }
+        const video = videoRef.current;
+        video.srcObject = mediaStream;
+        
+        // Wait for metadata to load before playing
+        return new Promise((resolve, reject) => {
+          video.onloadedmetadata = async () => {
+            try {
+              await video.play();
+              console.log('Camera started successfully');
+              resolve();
+            } catch (playError) {
+              console.error('Video play error:', playError);
+              reject(playError);
+            }
+          };
+          
+          // Timeout fallback
+          setTimeout(() => {
+            if (video.readyState >= 2) {
+              video.play().catch(err => console.log('Fallback play error:', err));
+              resolve();
+            }
+          }, 1000);
+        });
       }
     } catch (err) {
       console.error('Camera error:', err);

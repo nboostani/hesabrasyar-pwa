@@ -113,13 +113,11 @@ const CameraCapture = ({ onCapture, onCancel }) => {
           <>
             <video
               ref={videoRef}
-              autoPlay
               playsInline
               muted
               onLoadedMetadata={handleVideoLoad}
               onPlay={handleVideoPlay}
               className={styles.video}
-              style={{ transform: 'scaleX(1)' }}
             />
             {isLoading && (
               <div className={styles.loadingOverlay}>
