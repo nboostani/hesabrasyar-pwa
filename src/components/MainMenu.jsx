@@ -47,11 +47,11 @@ const MainMenu = () => {
       <div className={styles.header}>
         <div className={styles.logoSection}>
           <div className={styles.logoPlaceholder}>
-            <svg width="50" height="50" viewBox="0 0 100 100" fill="none">
-              <circle cx="50" cy="50" r="45" fill="#EF5530" opacity="0.1"/>
-              <circle cx="50" cy="50" r="35" fill="#EF5530" opacity="0.2"/>
-              <circle cx="50" cy="50" r="25" fill="#EF5530"/>
-              <path d="M50 35 L65 50 L50 65 L35 50 Z" fill="white"/>
+            <svg width="50" height="50" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+              <rect x="97" y="140" width="25" height="232" fill="#FFFFFF"/>
+              <rect x="403" y="140" width="25" height="232" fill="#FFFFFF"/>
+              <path d="M212 140 L330 140 L378 188 L330 236 L148 236 L148 188 Z" fill="#FFFFFF"/>
+              <path d="M312 276 L378 324 L312 372 L148 372 L148 324 L212 276 Z" fill="#FFFFFF"/>
             </svg>
           </div>
           <div>

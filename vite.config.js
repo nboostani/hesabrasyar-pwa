@@ -9,7 +9,7 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['icons/*.png', 'logo.png'],
+      includeAssets: ['icons/*.svg', 'icons/*.png', 'logo.svg'],
       manifest: {
         name: 'حسابرسیار - Hesabrasyar',
         short_name: 'حسابرسیار',
@@ -24,15 +24,15 @@ export default defineConfig({
         background_color: '#FFFFFF',
         icons: [
           {
-            src: '/hesabrasyar-pwa/icons/icon-192x192.png',
+            src: '/hesabrasyar-pwa/icons/icon-192x192.svg',
             sizes: '192x192',
-            type: 'image/png',
+            type: 'image/svg+xml',
             purpose: 'any maskable'
           },
           {
-            src: '/hesabrasyar-pwa/icons/icon-512x512.png',
+            src: '/hesabrasyar-pwa/icons/icon-512x512.svg',
             sizes: '512x512',
-            type: 'image/png',
+            type: 'image/svg+xml',
             purpose: 'any maskable'
           }
         ]

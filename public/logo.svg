@@ -1,7 +1,11 @@
-<svg width="192" height="192" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
   <rect width="512" height="512" fill="#FFFFFF"/>
+  <!-- Left bar -->
   <rect x="97" y="140" width="25" height="232" fill="#EF5530"/>
+  <!-- Right bar -->
   <rect x="403" y="140" width="25" height="232" fill="#EF5530"/>
+  <!-- Top arrow pointing right -->
   <path d="M212 140 L330 140 L378 188 L330 236 L148 236 L148 188 Z" fill="#EF5530"/>
+  <!-- Bottom arrow pointing left -->
   <path d="M312 276 L378 324 L312 372 L148 372 L148 324 L212 276 Z" fill="#EF5530"/>
 </svg>
