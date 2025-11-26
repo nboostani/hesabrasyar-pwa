@@ -24,6 +24,10 @@
   flex-shrink: 0;
 }
 
+.logoPlaceholder img {
+  filter: brightness(0) invert(1);
+}
+
 .appTitle {
   font-size: 28px;
   font-weight: 700;
