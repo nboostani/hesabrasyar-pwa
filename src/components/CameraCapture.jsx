@@ -27,12 +27,13 @@ const CameraCapture = ({ onCapture, onCancel }) => {
     const initCamera = async () => {
       setIsLoading(true);
       setDebugInfo('Requesting camera access...');
-      await startCamera('environment');
-      // Wait a bit for stream to fully initialize
-      setTimeout(() => {
+      try {
+        await startCamera('environment');
+        setDebugInfo('Camera started, waiting for stream...');
+      } catch (err) {
+        console.error('Camera init error:', err);
         setIsLoading(false);
-        setDebugInfo('Camera ready');
-      }, 500);
+      }
     };
 
     initCamera();
@@ -53,8 +54,21 @@ const CameraCapture = ({ onCapture, onCancel }) => {
   // Handle video play
   const handleVideoPlay = () => {
     console.log('Video playing');
+    setIsLoading(false);
     setDebugInfo('Camera streaming');
   };
+
+  // Fallback: Hide loading after timeout
+  useEffect(() => {
+    if (isStreaming && isLoading) {
+      const timer = setTimeout(() => {
+        console.log('Loading timeout - forcing hide');
+        setIsLoading(false);
+        setDebugInfo('Camera active (timeout)');
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [isStreaming, isLoading]);
 
   useEffect(() => {
     if (error) {
