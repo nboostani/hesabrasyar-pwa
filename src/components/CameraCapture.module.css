@@ -53,6 +53,12 @@
   margin: 0;
 }
 
+.debugText {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: var(--font-sm);
+  margin-top: var(--spacing-sm);
+}
+
 .cameraOverlay {
   position: absolute;
   top: 0;

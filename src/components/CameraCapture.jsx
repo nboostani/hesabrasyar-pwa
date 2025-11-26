@@ -20,13 +20,19 @@ const CameraCapture = ({ onCapture, onCancel }) => {
 
   const [isLoading, setIsLoading] = useState(true);
   const [showError, setShowError] = useState(false);
+  const [debugInfo, setDebugInfo] = useState('');
 
   useEffect(() => {
     // Start camera when component mounts
     const initCamera = async () => {
       setIsLoading(true);
+      setDebugInfo('Requesting camera access...');
       await startCamera('environment');
-      setIsLoading(false);
+      // Wait a bit for stream to fully initialize
+      setTimeout(() => {
+        setIsLoading(false);
+        setDebugInfo('Camera ready');
+      }, 500);
     };
 
     initCamera();
@@ -36,6 +42,19 @@ const CameraCapture = ({ onCapture, onCancel }) => {
       stopCamera();
     };
   }, []);
+
+  // Handle video metadata loaded
+  const handleVideoLoad = () => {
+    console.log('Video metadata loaded');
+    setIsLoading(false);
+    setDebugInfo('Video stream active');
+  };
+
+  // Handle video play
+  const handleVideoPlay = () => {
+    console.log('Video playing');
+    setDebugInfo('Camera streaming');
+  };
 
   useEffect(() => {
     if (error) {
@@ -97,12 +116,16 @@ const CameraCapture = ({ onCapture, onCancel }) => {
               autoPlay
               playsInline
               muted
+              onLoadedMetadata={handleVideoLoad}
+              onPlay={handleVideoPlay}
               className={styles.video}
+              style={{ transform: 'scaleX(1)' }}
             />
             {isLoading && (
               <div className={styles.loadingOverlay}>
                 <LoadingSpinner size="large" color="white" />
                 <p className={styles.loadingText}>در حال بارگذاری دوربین...</p>
+                {debugInfo && <p className={styles.debugText}>{debugInfo}</p>}
               </div>
             )}
           </>

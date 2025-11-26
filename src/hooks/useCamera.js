@@ -38,6 +38,13 @@ export const useCamera = () => {
       
       if (videoRef.current) {
         videoRef.current.srcObject = mediaStream;
+        // Wait for video to be ready and play it
+        try {
+          await videoRef.current.play();
+        } catch (playError) {
+          console.log('Video play error (may be auto-play policy):', playError);
+          // Video will auto-play with autoPlay attribute
+        }
       }
     } catch (err) {
       console.error('Camera error:', err);
