@@ -1,0 +1,168 @@
+.mainMenu {
+  min-height: 100vh;
+  background-color: var(--background-light);
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-orange-dark) 100%);
+  color: var(--text-white);
+  padding: var(--spacing-xl) var(--spacing-md);
+  box-shadow: var(--shadow-md);
+}
+
+.logoSection {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logoPlaceholder {
+  flex-shrink: 0;
+}
+
+.appTitle {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-white);
+}
+
+.appSubtitle {
+  font-size: var(--font-sm);
+  margin: 0;
+  opacity: 0.9;
+}
+
+.menuGrid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg) var(--spacing-md);
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.menuCard {
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--spacing-md);
+  width: 100%;
+}
+
+.iconWrapper {
+  color: var(--primary-orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background-color: rgba(239, 85, 48, 0.1);
+  border-radius: var(--radius-xl);
+  transition: all var(--transition-fast);
+}
+
+.menuCard:hover .iconWrapper {
+  background-color: rgba(239, 85, 48, 0.2);
+  transform: scale(1.1);
+}
+
+.cardTitle {
+  font-size: var(--font-lg);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.cardDescription {
+  font-size: var(--font-sm);
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.footer {
+  text-align: center;
+  padding: var(--spacing-lg);
+  color: var(--text-light);
+  font-size: var(--font-sm);
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .menuGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+    padding: var(--spacing-xl);
+  }
+  
+  .menuCard {
+    min-height: 220px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .menuGrid {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1400px;
+  }
+}
+
+/* Mobile Small */
+@media (max-width: 480px) {
+  .header {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+  
+  .appTitle {
+    font-size: 24px;
+  }
+  
+  .menuGrid {
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+  }
+  
+  .menuCard {
+    min-height: 150px;
+  }
+  
+  .iconWrapper {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .iconWrapper svg {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .cardTitle {
+    font-size: var(--font-md);
+  }
+  
+  .cardDescription {
+    font-size: var(--font-xs);
+  }
+}

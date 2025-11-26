@@ -1,0 +1,150 @@
+.container {
+  min-height: calc(100vh - 60px);
+  background-color: var(--background-light);
+  padding: var(--spacing-lg) var(--spacing-md);
+  padding-bottom: calc(var(--spacing-lg) + 80px); /* Space for fixed button */
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.imagePreview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-xl);
+}
+
+.thumbnail {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 3px solid var(--primary-orange);
+  box-shadow: var(--shadow-md);
+}
+
+.imageLabel {
+  font-size: var(--font-sm);
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.selectionSection {
+  animation: slideUp 0.4s ease;
+}
+
+.title {
+  font-size: var(--font-xl);
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+  text-align: center;
+}
+
+.description {
+  font-size: var(--font-md);
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  line-height: 1.6;
+}
+
+.projectList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.projectCard {
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border: 2px solid transparent;
+}
+
+.projectCard:hover {
+  border-color: var(--primary-orange);
+}
+
+.projectCard.selected {
+  border-color: var(--primary-orange);
+  background-color: rgba(239, 85, 48, 0.05);
+}
+
+.projectInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.projectHeader {
+  flex: 1;
+}
+
+.projectName {
+  font-size: var(--font-lg);
+  color: var(--text-primary);
+  margin: 0 0 var(--spacing-xs) 0;
+  font-weight: 600;
+}
+
+.projectCode {
+  font-size: var(--font-sm);
+  color: var(--text-secondary);
+  background-color: var(--background-light);
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
+  font-family: monospace;
+}
+
+.selectedBadge {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--primary-orange);
+  color: var(--text-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .container {
+    padding: var(--spacing-md);
+  }
+  
+  .thumbnail {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .title {
+    font-size: var(--font-lg);
+  }
+  
+  .description {
+    font-size: var(--font-sm);
+  }
+  
+  .projectName {
+    font-size: var(--font-md);
+  }
+}

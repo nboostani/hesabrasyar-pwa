@@ -1,0 +1,209 @@
+.container {
+  min-height: 100vh;
+  background-color: var(--background-light);
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+  padding: var(--spacing-lg) var(--spacing-md);
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.devNotice {
+  background: linear-gradient(135deg, var(--warning) 0%, #FFA726 100%);
+  color: var(--text-white);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+  animation: slideDown 0.4s ease;
+}
+
+.devIcon {
+  font-size: 32px;
+}
+
+.devText {
+  font-size: var(--font-lg);
+  font-weight: 600;
+  margin: 0;
+}
+
+.listSection {
+  animation: slideUp 0.4s ease 0.2s;
+  animation-fill-mode: both;
+}
+
+.sectionTitle {
+  font-size: var(--font-xl);
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-lg);
+  padding-right: var(--spacing-sm);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.listItem {
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.itemContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.itemTitle {
+  font-size: var(--font-lg);
+  color: var(--text-primary);
+  margin: 0 0 var(--spacing-xs) 0;
+  font-weight: 600;
+}
+
+.itemSubtitle {
+  font-size: var(--font-sm);
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.badge {
+  background-color: var(--primary-orange);
+  color: var(--text-white);
+  padding: 6px 16px;
+  border-radius: var(--radius-md);
+  font-size: var(--font-sm);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.statusBadge {
+  background-color: var(--success);
+  color: var(--text-white);
+  padding: 6px 16px;
+  border-radius: var(--radius-md);
+  font-size: var(--font-sm);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Timesheet Specific */
+.timesheetContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.timesheetHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.hoursBadge {
+  background-color: var(--info);
+  color: var(--text-white);
+  padding: 6px 12px;
+  border-radius: var(--radius-md);
+  font-size: var(--font-sm);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.timesheetDate {
+  font-size: var(--font-xs);
+  color: var(--text-light);
+  margin: 0;
+  font-family: monospace;
+}
+
+/* Animations */
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Empty State */
+.emptyState {
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: var(--text-secondary);
+}
+
+.emptyState h3 {
+  font-size: var(--font-xl);
+  margin-bottom: var(--spacing-sm);
+}
+
+.emptyState p {
+  font-size: var(--font-md);
+  line-height: 1.6;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .content {
+    padding: var(--spacing-md);
+  }
+  
+  .devNotice {
+    padding: var(--spacing-md);
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .devIcon {
+    font-size: 24px;
+  }
+  
+  .devText {
+    font-size: var(--font-md);
+  }
+  
+  .sectionTitle {
+    font-size: var(--font-lg);
+  }
+  
+  .itemTitle {
+    font-size: var(--font-md);
+  }
+  
+  .itemContent {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .timesheetHeader {
+    width: 100%;
+  }
+}

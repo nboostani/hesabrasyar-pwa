@@ -1,0 +1,32 @@
+.card {
+  background-color: var(--background-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+
+.small {
+  padding: var(--spacing-sm);
+}
+
+.medium {
+  padding: var(--spacing-md);
+}
+
+.large {
+  padding: var(--spacing-lg);
+}
+
+.hoverable:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}

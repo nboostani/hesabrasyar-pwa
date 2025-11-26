@@ -1,0 +1,9 @@
+<!-- Placeholder for 512x512 icon - replace with actual PNG -->
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" fill="#EF5530"/>
+  <circle cx="256" cy="256" r="190" fill="#FFFFFF" opacity="0.2"/>
+  <circle cx="256" cy="256" r="140" fill="#FFFFFF" opacity="0.3"/>
+  <circle cx="256" cy="256" r="100" fill="#FFFFFF"/>
+  <path d="M256 180 L330 256 L256 332 L182 256 Z" fill="#EF5530"/>
+  <text x="256" y="460" font-family="Arial" font-size="40" fill="#FFFFFF" text-anchor="middle">حسابرسیار</text>
+</svg>

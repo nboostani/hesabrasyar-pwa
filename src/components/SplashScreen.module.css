@@ -1,0 +1,123 @@
+.splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #FFFFFF 0%, #F5F5F5 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-xl);
+  text-align: center;
+}
+
+.logoContainer {
+  animation: scaleIn 0.5s ease;
+}
+
+.logoPlaceholder {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.appName {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--primary-orange);
+  margin: 0;
+  animation: slideUp 0.6s ease;
+}
+
+.tagline {
+  font-size: var(--font-md);
+  color: var(--text-secondary);
+  margin: 0;
+  animation: slideUp 0.6s ease 0.2s;
+  animation-fill-mode: both;
+}
+
+.spinnerContainer {
+  margin-top: var(--spacing-md);
+  animation: fadeIn 0.6s ease 0.4s;
+  animation-fill-mode: both;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.splash.fadeOut {
+  animation: fadeOut 0.3s ease forwards;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .appName {
+    font-size: 28px;
+  }
+  
+  .logoPlaceholder {
+    width: 100px;
+    height: 100px;
+  }
+}
