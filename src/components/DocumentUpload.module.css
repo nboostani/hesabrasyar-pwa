@@ -96,7 +96,7 @@
 }
 
 .successMessage strong {
-  color: var(--primary-color);
+  color: var(--secondary-orange);
   font-weight: 600;
 }
 

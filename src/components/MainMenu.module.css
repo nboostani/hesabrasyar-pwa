@@ -71,7 +71,7 @@
 }
 
 .iconWrapper {
-  color: var(--primary-color);
+  color: var(--secondary-orange);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,7 +83,8 @@
 }
 
 .menuCard:hover .iconWrapper {
-  background-color: rgba(239, 85, 48, 0.2);
+  background-color: var(--secondary-orange);
+  color: var(--text-white);
   transform: scale(1.1);
 }
 

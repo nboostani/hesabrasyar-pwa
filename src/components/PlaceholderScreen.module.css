@@ -80,7 +80,7 @@
 }
 
 .badge {
-  background-color: var(--primary-color);
+  background-color: var(--secondary-orange);
   color: var(--text-white);
   padding: 6px 16px;
   border-radius: var(--radius-md);
