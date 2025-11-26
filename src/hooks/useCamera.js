@@ -36,14 +36,23 @@ export const useCamera = () => {
       setStream(mediaStream);
       setFacingMode(mode);
       
+      console.log('Stream obtained:', {
+        hasStream: !!mediaStream,
+        tracks: mediaStream.getTracks().length,
+        hasVideoRef: !!videoRef.current
+      });
+      
       if (videoRef.current) {
         const video = videoRef.current;
         video.srcObject = mediaStream;
+        
+        console.log('Stream assigned to video element');
         
         // Wait for metadata to load before playing
         return new Promise((resolve, reject) => {
           video.onloadedmetadata = async () => {
             try {
+              console.log('Metadata loaded, attempting play');
               await video.play();
               console.log('Camera started successfully');
               resolve();
@@ -55,12 +64,18 @@ export const useCamera = () => {
           
           // Timeout fallback
           setTimeout(() => {
+            console.log('Metadata timeout, readyState:', video.readyState);
             if (video.readyState >= 2) {
               video.play().catch(err => console.log('Fallback play error:', err));
               resolve();
+            } else {
+              console.warn('Video not ready after timeout');
+              resolve();
             }
-          }, 1000);
+          }, 2000);
         });
+      } else {
+        console.error('videoRef.current is null!');
       }
     } catch (err) {
       console.error('Camera error:', err);

@@ -8,6 +8,7 @@ import styles from './CameraCapture.module.css';
 const CameraCapture = ({ onCapture, onCancel }) => {
   const {
     videoRef,
+    stream,
     error,
     capturedImage,
     isStreaming,
@@ -73,6 +74,15 @@ const CameraCapture = ({ onCapture, onCancel }) => {
     console.warn('Video stalled');
     setDebugInfo('Video stalled');
   };
+
+  // Ensure stream is set to video element when stream changes
+  useEffect(() => {
+    if (stream && videoRef.current && !videoRef.current.srcObject) {
+      console.log('Manually setting stream to video element');
+      videoRef.current.srcObject = stream;
+      videoRef.current.play().catch(err => console.error('Manual play error:', err));
+    }
+  }, [stream, videoRef]);
 
   // Fallback: Hide loading after timeout
   useEffect(() => {
