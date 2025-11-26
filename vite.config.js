@@ -16,20 +16,21 @@ export default defineConfig({
         description: 'سامانه مدیریت اسناد و اسکن موبایل',
         dir: 'rtl',
         lang: 'fa-IR',
-        start_url: '/',
+        start_url: '/hesabrasyar-pwa/',
+        scope: '/hesabrasyar-pwa/',
         display: 'standalone',
         orientation: 'portrait',
         theme_color: '#EF5530',
         background_color: '#FFFFFF',
         icons: [
           {
-            src: '/icons/icon-192x192.png',
+            src: '/hesabrasyar-pwa/icons/icon-192x192.png',
             sizes: '192x192',
             type: 'image/png',
             purpose: 'any maskable'
           },
           {
-            src: '/icons/icon-512x512.png',
+            src: '/hesabrasyar-pwa/icons/icon-512x512.png',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'any maskable'
